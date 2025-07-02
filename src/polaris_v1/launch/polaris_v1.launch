@@ -1,0 +1,44 @@
+<launch>
+<!---file $(find polaris_v1)/urdf/polaris_v1.urdf -urdf -model polaris_v1-->
+
+  <rosparam file="$(find polaris_v1)/config/servo_controller.yaml" command="load"/> 
+  <param name="robot_description" textfile="$(find polaris_v1)/urdf/polaris_v1.urdf"/>
+  <arg name="x_pos" default="0.0"/>
+  <arg name="y_pos" default="0.0"/>
+  <arg name="z_pos" default="0.268"/>
+  
+  <node
+    name="tf_footprint_base"
+    pkg="tf"
+    type="static_transform_publisher"
+    args="0 0 0 0 0 0 base_link base_footprint 10" />  
+  <node 
+    pkg="tf" 
+    type="static_transform_publisher" 
+    name="base_to_map" 
+    args="0 0 0 0 0 0 base_link map 10" />
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+      <arg name="paused" value="false"/>
+      <arg name="use_sim_time" value="true"/>
+      <arg name="gui" value="true"/>
+      <arg name="headless" value="false"/>
+      <arg name="debug" value="false"/>
+      <arg name="world_name" value="$(find polaris_v1)/worlds/world.world"/>
+  </include>
+    
+  <node 
+    name="spawn_urdf" 
+    pkg="gazebo_ros" 
+    type="spawn_model" 
+    respawn="false" 
+    output="screen" 
+    args="-urdf -model polaris_v1 -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description"/>  
+
+  <node name="servo_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="joint_state_controller FRS_Joint_position_controller FLS_Joint_position_controller BRS_Joint_position_controller BLS_Joint_position_controller" />
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="false" output="screen"/>
+
+  <node name="robot_state_publisher"  pkg="robot_state_publisher"  type="robot_state_publisher" respawn="false" output="screen"/>  
+    
+</launch>

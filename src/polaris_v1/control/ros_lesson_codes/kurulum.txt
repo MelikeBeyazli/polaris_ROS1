@@ -1,0 +1,4 @@
+find_object_2d ROS paketini bilgisayarınıza kurmak için:
+1) cd catkin_ws/src
+2) git clone https://github.com/introlab/find-object.git -b noetic-devel
+3) cd ~/catkin_ws && catkin_make

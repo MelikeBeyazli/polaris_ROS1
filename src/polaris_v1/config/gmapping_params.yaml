@@ -1,0 +1,30 @@
+map_update_interval: 1.0  # Daha sık harita güncellemesi için aralığı azaltıyorum.
+maxUrange: 8.0  # RPLIDAR A2M12 için maksimum etkili menzil 8 metre civarındadır.
+sigma: 0.02  # RPLIDAR'ın ölçüm hassasiyetini optimize etmek için daha düşük bir belirsizlik değeri kullanıyorum.
+kernelSize: 1  # Standart olarak bırakıyorum.
+lstep: 0.1  # Harita oluşturulurken daha geniş bir lineer adım büyüklüğü, hesaplama yükünü azaltır.
+astep: 0.1  # Açısal adım büyüklüğünü de biraz artırıyorum, RPLIDAR'ın açı hassasiyeti ile uyumlu.
+iterations: 5  # Standart iterasyon sayısı.
+lsigma: 0.1  # Lineer hareket belirsizliği için RPLIDAR hassasiyetiyle uyumlu bir değer.
+ogain: 3.0  # Harita güncelleme kazancı.
+lskip: 0  # Her ölçümün kullanılmasını sağlıyorum.
+minimumScore: 70  # Daha yüksek bir minimum skor, daha doğru harita güncellemeleri sağlar.
+srr: 0.1  # Pozisyon tahmininde lineer hareket için belirsizlik.
+srt: 0.2  # Açısal hareket için belirsizlik.
+str: 0.1  # Lineer hareket için açısal belirsizlik.
+stt: 0.2  # Açısal hareket için açısal belirsizlik.
+linearUpdate: 0.5  # RPLIDAR'ın hassasiyeti nedeniyle daha küçük bir lineer güncelleme eşiği kullanıyorum.
+angularUpdate: 0.1  # Daha hassas açısal güncelleme.
+temporalUpdate: 0.5  # Zaman temelli güncelleme aralığı.
+resampleThreshold: 0.5  # Yeniden örnekleme eşiği.
+particles: 150  # Parçacık sayısını artırarak daha hassas bir SLAM işlemi elde etmeyi hedefliyorum.
+xmin: -10.0  # Harita sınırları.
+ymin: -10.0  # Harita sınırları.
+xmax: 10.0  # Harita sınırları.
+ymax: 10.0  # Harita sınırları.
+delta: 0.05  # Harita çözünürlüğü.
+llsamplerange: 0.01  # Lineer hareket için örnekleme aralığı.
+llsamplestep: 0.01  # Lineer hareket için örnekleme adımı.
+lasamplerange: 0.01  # Açısal hareket için örnekleme aralığı, biraz artırıyorum.
+lasamplestep: 0.01  # Açısal hareket için örnekleme adımı.
+

@@ -1,0 +1,1061 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="polaris_v1">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0135856354500551 -0.000368623782946442 0.0321180332372298"
+        rpy="0 0 0" />
+      <mass
+        value="17.3813227656087" />
+      <inertia
+        ixx="0.802202966157402"
+        ixy="0.000367065697614043"
+        ixz="0.0503338758794729"
+        iyy="1.25689975167862"
+        iyz="-1.81732123472174E-05"
+        izz="1.4061181494617" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="White">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Frame_Link">
+    <inertial>
+      <origin
+        xyz="0.065625 0.042375 0.065251"
+        rpy="0 0 0" />
+      <mass
+        value="0.23722" />
+      <inertia
+        ixx="0.0014086"
+        ixy="7.0084E-06"
+        ixz="1.6947E-05"
+        iyy="0.002752"
+        iyz="-5.3554E-07"
+        izz="0.0022916" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/Frame_Link.STL" />
+      </geometry>
+      <material
+        name="Red">
+        <color
+          rgba="0.75294 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/Frame_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Frame_Joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Frame_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="FRS_Link">
+    <inertial>
+      <origin
+        xyz="-0.00028954 0.017008 -0.030505"
+        rpy="0 0 0" />
+      <mass
+        value="0.26569" />
+      <inertia
+        ixx="0.00020177"
+        ixy="8.9975E-09"
+        ixz="-3.4847E-08"
+        iyy="0.00018976"
+        iyz="1.0754E-07"
+        izz="0.00025101" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/FRS_Link.STL" />
+      </geometry>
+      <material
+        name="Gray">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/FRS_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FRS_Joint"
+    type="revolute">
+    <origin
+      xyz="0.1834 -0.34874 -0.12737"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="FRS_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.142"
+      upper="3.142"
+      effort="20"
+      velocity="15" />
+    <dynamics
+      damping="0.2"
+      friction="0.2" />
+  </joint>
+  <link
+    name="FRD_Link">
+    <inertial>
+      <origin
+        xyz="2.22044604925031E-16 -3.90312782094782E-18 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.518797270106307" />
+      <inertia
+        ixx="0.000593235551045214"
+        ixy="-3.04506138371625E-07"
+        ixz="1.80596659345287E-19"
+        iyy="0.00104547053081701"
+        iyz="2.88500201178985E-20"
+        izz="0.000593235346010331" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/FRD_Link.STL" />
+      </geometry>
+      <material
+        name="Red">
+        <color
+          rgba="0.752941176470588 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/FRD_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FRD_Joint"
+    type="continuous">
+    <origin
+      xyz="-0.0004176 -0.0043003 -0.06828"
+      rpy="0 0 0" />
+    <parent
+      link="FRS_Link" />
+    <child
+      link="FRD_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="20"
+      velocity="15" />
+    <dynamics
+      damping="0.2"
+      friction="0.2" />
+  </joint>
+  <link
+    name="BRS_Link">
+    <inertial>
+      <origin
+        xyz="4.72063399692413E-06 0.0170105153668563 -0.0305049637464356"
+        rpy="0 0 0" />
+      <mass
+        value="0.26568630485325" />
+      <inertia
+        ixx="0.000201764594262619"
+        ixy="-1.98649062271937E-07"
+        ixz="-3.29811105170335E-08"
+        iyy="0.000189766083815041"
+        iyz="1.08128721551344E-07"
+        izz="0.000251005809312619" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/BRS_Link.STL" />
+      </geometry>
+      <material
+        name="Gray">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/BRS_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BRS_Joint"
+    type="revolute">
+    <origin
+      xyz="-0.26091 -0.34874 -0.12737"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="BRS_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.142"
+      upper="3.142"
+      effort="20"
+      velocity="15" />
+    <dynamics
+      damping="0.2"
+      friction="0.2" />
+  </joint>
+  <link
+    name="BRD_Link">
+    <inertial>
+      <origin
+        xyz="0.000332509365037759 0.019997235747028 -4.9960036108132E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.518797270106307" />
+      <inertia
+        ixx="0.000593360346673492"
+        ixy="7.51758594691379E-06"
+        ixz="-1.18507925104678E-19"
+        iyy="0.00104534573518873"
+        iyz="-1.58025277226914E-18"
+        izz="0.000593235346010331" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/BRD_Link.STL" />
+      </geometry>
+      <material
+        name="Red">
+        <color
+          rgba="0.752941176470588 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/BRD_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BRD_Joint"
+    type="continuous">
+    <origin
+      xyz="-0.00082444 -0.02429 -0.06828"
+      rpy="0 0 0" />
+    <parent
+      link="BRS_Link" />
+    <child
+      link="BRD_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="20"
+      velocity="15" />
+    <dynamics
+      damping="0.2"
+      friction="0.2" />
+  </joint>
+  <link
+    name="FLS_Link">
+    <inertial>
+      <origin
+        xyz="0.000286717627501432 -0.0170081023419595 -0.0305049648298585"
+        rpy="0 0 0" />
+      <mass
+        value="0.265686304830206" />
+      <inertia
+        ixx="0.000201767799862076"
+        ixy="6.88211065138961E-09"
+        ixz="3.44859487918497E-08"
+        iyy="0.00018976272563148"
+        iyz="-1.07548319818831E-07"
+        izz="0.000251005813561771" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/FLS_Link.STL" />
+      </geometry>
+      <material
+        name="Gray">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/FLS_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FLS_Joint"
+    type="revolute">
+    <origin
+      xyz="0.165 0.34671 -0.12737"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="FLS_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.142"
+      upper="3.142"
+      effort="20"
+      velocity="15" />
+    <dynamics
+      damping="0.2"
+      friction="0.2" />
+  </joint>
+  <link
+    name="FLD_Link">
+    <inertial>
+      <origin
+        xyz="0 0 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.518797270106306" />
+      <inertia
+        ixx="0.000593235346010329"
+        ixy="-1.9296469329637E-20"
+        ixz="-1.39501550379285E-20"
+        iyy="0.00104547073585189"
+        iyz="-4.85115886510159E-19"
+        izz="0.000593235346010329" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/FLD_Link.STL" />
+      </geometry>
+      <material
+        name="Red">
+        <color
+          rgba="0.752941176470588 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/FLD_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FLD_Joint"
+    type="continuous">
+    <origin
+      xyz="0.00041836 0.0043002 -0.06828"
+      rpy="0 0 0.00049713" />
+    <parent
+      link="FLS_Link" />
+    <child
+      link="FLD_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="20"
+      velocity="15" />
+    <dynamics
+      damping="0.2"
+      friction="0.2" />
+  </joint>
+  <link
+    name="BLS_Link">
+    <inertial>
+      <origin
+        xyz="-7.68143074765248E-05 -0.017010342585988 -0.0305049637459894"
+        rpy="0 0 0" />
+      <mass
+        value="0.26568630485325" />
+      <inertia
+        ixx="0.000201762620887554"
+        ixy="-2.49493379607449E-07"
+        ixz="3.25225447298381E-08"
+        iyy="0.000189767909095496"
+        iyz="-1.08267530480578E-07"
+        izz="0.000251005809312619" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/BLS_Link.STL" />
+      </geometry>
+      <material
+        name="Gray">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/BLS_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BLS_Joint"
+    type="revolute">
+    <origin
+      xyz="-0.27885 0.34714 -0.12737"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="BLS_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.142"
+      upper="3.142"
+      effort="20"
+      velocity="15" />
+    <dynamics
+      damping="0.2"
+      friction="0.2" />
+  </joint>
+  <link
+    name="BLD_Link">
+    <inertial>
+      <origin
+        xyz="-5.55111512312578E-17 -2.22044604925031E-16 -5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.518797270106306" />
+      <inertia
+        ixx="0.00059343218660394"
+        ixy="9.43289649945181E-06"
+        ixz="-1.91829463375101E-20"
+        iyy="0.00104527389525828"
+        iyz="1.65044423418098E-19"
+        izz="0.000593235346010329" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/BLD_Link.STL" />
+      </geometry>
+      <material
+        name="Red">
+        <color
+          rgba="0.752941176470588 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/BLD_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BLD_Joint"
+    type="continuous">
+    <origin
+      xyz="0.00051012 0.0042903 -0.06828"
+      rpy="0 0 0" />
+    <parent
+      link="BLS_Link" />
+    <child
+      link="BLD_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="20"
+      velocity="15" />
+    <dynamics
+      damping="0.2"
+      friction="0.2" />
+  </joint>
+  <link
+    name="Glass_Link">
+    <inertial>
+      <origin
+        xyz="0.33872 0.00012265 0.064463"
+        rpy="0 0 0" />
+      <mass
+        value="1.2093" />
+      <inertia
+        ixx="0.041112"
+        ixy="-5.5246E-05"
+        ixz="0.00051803"
+        iyy="0.017745"
+        iyz="1.9916E-05"
+        izz="0.038251" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/Glass_Link.STL" />
+      </geometry>
+      <material
+        name="Transparent">
+        <color
+          rgba="1 1 1 0.5" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/Glass_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Glass_Joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Glass_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Lidar_Link">
+    <inertial>
+      <origin
+        xyz="0.002291 -6.7642E-05 -0.0052855"
+        rpy="0 0 0" />
+      <mass
+        value="0.055329" />
+      <inertia
+        ixx="1.8044E-05"
+        ixy="3.8843E-08"
+        ixz="-2.5259E-07"
+        iyy="1.772E-05"
+        iyz="-4.9929E-09"
+        izz="3.2968E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/Lidar_Link.STL" />
+      </geometry>
+      <material
+        name="Black">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/Lidar_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Lidar_Joint"
+    type="fixed">
+    <origin
+      xyz="0.28338 0.0031714 0.23345"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Lidar_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="camera_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/camera_link.STL" />
+      </geometry>
+      <material
+        name="Gray">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://polaris_v1/meshes/camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_joint"
+    type="fixed">
+    <origin
+      xyz="0.18518 0.0013334 0.28471"
+      rpy="-4.5863E-05 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint> 
+
+<link name="imu_link">
+  <inertial>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <mass value="1.0" />
+    <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1" />
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <box size="0.02 0.02 0.02" />
+    </geometry>
+    <material name="Blue">
+      <color rgba="0 0 1 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <box size="0.02 0.02 0.02" />
+    </geometry>
+  </collision>
+</link>
+<joint name="imu_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <parent link="base_link" />
+  <child link="imu_link" />
+</joint>
+
+
+   
+  <!--Bu XML kodu, ROS (Robot Operating System) framework'ünde bir robotun donanım konfigürasyonunu tanımlamak için kullanılır 
+
+      ve özellikle bir "SimpleTransmission" (basit iletim) yapılandırmasını belirtir. Bu yapılandırma, belirli bir eklem (joint) ve 
+
+      bu ekleme bağlı bir aktüatör (motor) arasındaki ilişkiyi tanımlar. Kodun işlevlerini ayrıntılı olarak açıklayacak olursak:
+
+        Transmission (İletim):
+
+          name: FLS_Link_trans: Bu, iletimin adıdır ve belirli bir iletimin tanımlanması için kullanılır.
+
+          type: transmission_interface/SimpleTransmission: Bu, basit bir iletim türünü belirtir. Bu tür iletimler genellikle bir motor ve bir eklem arasındaki doğrudan bağlantıları temsil eder.
+
+        Joint (Eklem):
+
+          name: FLS_Joint: Bu, eklemin adını belirtir.
+
+          hardwareInterface: hardware_interface/PositionJointInterface: Bu, eklem için kullanılan donanım arayüzünü belirtir. "PositionJointInterface", eklem için pozisyon kontrolü yapıldığını ifade eder.
+
+        Actuator (Aktüatör):
+
+          name: FLS_Link_motor: Bu, aktüatörün adını belirtir.
+
+          hardwareInterface: hardware_interface/PositionJointInterface: Bu, aktüatör için kullanılan donanım arayüzünü belirtir. Aynı eklemde olduğu gibi, pozisyon kontrolü için kullanılır.
+
+          mechanicalReduction: 1: Bu, mekanik azaltma oranını belirtir. 1 değeri, aktüatörün doğrudan ekleme bağlı olduğunu ve herhangi bir dişli oranı olmadığını gösterir.
+
+        Bu kod parçası, ROS kontrol paketlerinde robotun URDF (Unified Robot Description Format) dosyasının bir parçası olarak bulunur. 
+
+        Bu dosya, robotun donanım bileşenlerinin nasıl bağlandığını ve hangi kontrol arayüzlerinin kullanılacağını belirlemeye yardımcı olur. Özetle, bu kod parçası şu işlevleri yerine getirir:
+
+      FLS_Joint adındaki eklemin pozisyon kontrolü yapılacağını belirtir.
+
+      FLS_Link_motor adındaki motorun bu ekleme bağlı olduğunu ve yine pozisyon kontrolü yapacağını belirtir.
+
+      Mekanik azaltma oranı 1 olduğundan, motorun doğrudan ekleme bağlı olduğunu ifade eder.
+
+      Bu yapılandırma, simülasyon ve gerçek dünya uygulamalarında robotun eklemlerinin ve motorlarının doğru bir şekilde kontrol edilmesini sağlar.-->
+
+  <transmission name="FRS_Link_trans">
+
+    <type>transmission_interface/SimpleTransmission</type>
+
+    <joint name="FRS_Joint">
+
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+
+    </joint>
+
+    <actuator name="FRS_Link_motor">
+
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+
+    	<mechanicalReduction>1</mechanicalReduction>
+
+    	</actuator>  
+
+  </transmission> 
+
+  <transmission name="FLS_Link_trans">
+
+    <type>transmission_interface/SimpleTransmission</type>
+
+    <joint name="FLS_Joint">
+
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+
+    </joint>  
+
+    <actuator name="FLS_Link_motor">
+
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+
+    	<mechanicalReduction>1</mechanicalReduction>
+
+    	</actuator>  
+
+  </transmission>
+
+  <transmission name="BRS_Link_trans">
+
+    <type>transmission_interface/SimpleTransmission</type>
+
+    <joint name="BRS_Joint">
+
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+
+    </joint>
+
+    <actuator name="BRS_Link_motor">
+
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+
+    	<mechanicalReduction>1</mechanicalReduction>
+
+    	</actuator>  
+
+  </transmission>
+
+  <transmission name="BLS_Link_trans">
+
+    <type>transmission_interface/SimpleTransmission</type>
+
+    <joint name="BLS_Joint">
+
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+
+    </joint>
+
+    <actuator name="BLS_Link_motor">
+
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+
+    	<mechanicalReduction>1</mechanicalReduction>
+
+    	</actuator>  
+
+  </transmission>   
+  
+  
+  
+  <!--GAZEBO-->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so"/>
+  </gazebo> 
+
+
+  <!--Gazebo ortamında color, dumping(mu2), friction(mu1) gibi etkenleri tanımlamak amacıyla aşağıdaki kod dizilimi kullanılmıştır.-->
+  <gazebo reference="base_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="Frame_Link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Red</material>
+  </gazebo> 
+
+  <gazebo reference="Glass_Link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Transparent</material>
+  </gazebo> 
+
+  <gazebo reference="imu_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Blue</material>
+  </gazebo> 
+  
+ <gazebo reference="FRS_Link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Gray</material>
+  </gazebo>  
+
+  <gazebo reference="FLS_Link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Gray</material>
+  </gazebo> 
+
+  <gazebo reference="BRS_Link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Gray</material>
+  </gazebo>
+
+  <gazebo reference="BLS_Link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Gray</material>
+  </gazebo>   
+
+  <gazebo reference="FRD_Link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Red</material>
+  </gazebo>  
+
+  <gazebo reference="FLD_Link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Red</material>
+  </gazebo> 
+
+  <gazebo reference="BRD_Link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Red</material>
+  </gazebo> 
+
+  <gazebo reference="BLD_Link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Red</material>
+  </gazebo> 
+  
+  <gazebo reference="Lidar_Link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Gray</material>
+  </gazebo> 
+  
+  <gazebo reference="camera_">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Gray</material>
+  </gazebo> 
+
+  <!--Sürüş kontrolcüsünü gazebo ortamına bağlamak amacıyla plugin çağrılmıştır.-->
+  <gazebo>
+    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+      <updateRate>50.0</updateRate>
+      <robotNamespace>/</robotNamespace>
+      <leftFrontJoint>FLD_Joint</leftFrontJoint>
+      <rightFrontJoint>FRD_Joint</rightFrontJoint>
+      <leftRearJoint>BLD_Joint</leftRearJoint>
+      <rightRearJoint>BRD_Joint</rightRearJoint>  
+      <wheelSeparation>0.70017</wheelSeparation>
+      <wheelDiameter>0.125</wheelDiameter>   
+      <torque>20000</torque>      
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>base_link</robotBaseFrame>    
+      <publishWheelTF>true</publishWheelTF>     
+      <publishOdom>true</publishOdom>     
+      <publishWheelJointState>true</publishWheelJointState>            
+      <!--odometrySource>1</odometrySource-->
+      <max_velocity>15.0</max_velocity>
+      <max_acceleration>15.0</max_acceleration>
+      <covariance_x>0.0001</covariance_x>
+      <covariance_y>0.0001</covariance_y>
+      <covariance_yaw>0.01</covariance_yaw>    
+    </plugin>
+  </gazebo>
+  
+    <gazebo reference="Lidar_Link">
+      <sensor type="ray" name="lidar_sensor">
+        <pose>0 0 0 0 0 0</pose>
+        <visualize>true</visualize>
+        <update_rate>1</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>360</samples> <!-- RPLIDAR A2M12 için 360 derece tarama -->
+              <resolution>1</resolution>
+              <min_angle>-3.1415</min_angle> <!-- -180 derece -->
+              <max_angle>3.1415</max_angle> <!-- 180 derece -->
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.15</min> <!-- Minimum mesafe algılama -->
+            <max>12.0</max> <!-- Maksimum mesafe algılama, RPLIDAR A2M12 için -->
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+        <plugin name="gazebo_ros_laser" filename="libgazebo_ros_laser.so">
+          <topicName>scan</topicName>
+          <frameName>Lidar_Link</frameName>
+          <minIntensity>0.0</minIntensity> <!-- Lidar sensörünün minimum algılama hassasiyeti -->
+        </plugin>
+      </sensor>
+    </gazebo>
+  <gazebo reference="imu_link">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>1</update_rate>
+      <visualize>true</visualize>
+      <topic>__default_topic__</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>imu</topicName>
+        <bodyName>imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>imu_link</frameName>
+        <initialOrientationAsReference>false</initialOrientationAsReference>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>  
+</robot>
