@@ -1,0 +1,18 @@
+<launch>
+  <arg name="open_rviz" default="true"/>
+  
+	<include file="$(find polaris_v3)/launch/polaris.launch"/>
+	
+	<node pkg="gmapping" type="slam_gmapping" name="polaris_slam_gmapping" output="screen">
+    <param name="base_frame" value="base_link"/>
+    <param name="map_frame"  value="map"/>
+    <rosparam command="load" file="$(find polaris_v3)/config/gmapping_params.yaml" />
+    <param name="tf_delay" value="10.0" />
+  </node>
+    
+  <!-- rviz -->
+  <group if="$(arg open_rviz)"> 
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find polaris_v3)/rviz/polaris_gmapping.rviz"/>
+  </group>    
+</launch>

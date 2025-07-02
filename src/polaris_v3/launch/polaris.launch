@@ -1,0 +1,53 @@
+<launch>
+  <!-- Load the URDF file -->
+  <param name="robot_description" textfile="$(find polaris_v3)/urdf/polaris.urdf"/> 
+
+  <!-- Argument for spawn position -->
+  <arg name="x_pos" default="0.0"/>
+  <arg name="y_pos" default="0.0"/>
+  <arg name="z_pos" default="0.258"/>  
+  
+  <!-- Static transforms -->
+  <node name="tf_footprint_base" pkg="tf" type="static_transform_publisher" args="0 0 0.258 0 0 0 base_link base_footprint 100" /> 
+  <node name="base_to_map" pkg="tf" type="static_transform_publisher" args="0 0 0.258 0 0 0 map base_link 100" />
+  
+  <!-- Gazebo simulation -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+    <arg name="world_name" value="$(find polaris_v3)/worlds/world.world"/>
+  </include>
+  
+  <!-- Spawn the robot model -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model polaris -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description"/>  
+  
+  <!-- Load parameters for controllers -->
+  <rosparam file="$(find polaris_v3)/config/servo_controller.yaml" command="load"/> 
+  
+  <!-- Spawn controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="joint_state_controller FRS_Joint_position_controller FLS_Joint_position_controller BRS_Joint_position_controller BLS_Joint_position_controller"/>
+  
+  <!-- Publishers for joint states and robot state -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" output="screen"/>
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+  <param name="publish_frequency" value="10.0" />  <!-- 50 Hz gibi bir değere düşürebilirsiniz -->
+</node>
+  <arg name="open_rviz" default="true"/>
+	
+	<node pkg="gmapping" type="slam_gmapping" name="polaris_slam_gmapping" output="screen">
+    <param name="base_frame" value="base_link"/>
+    <param name="map_frame"  value="map"/>
+    <rosparam command="load" file="$(find polaris_v3)/config/gmapping_params.yaml" />
+    <param name="tf_delay" value="10.0" />
+  </node>
+    
+  <!-- rviz -->
+  <group if="$(arg open_rviz)"> 
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find polaris_v3)/rviz/polaris_gmapping.rviz"/>
+  </group> 
+</launch>
+
