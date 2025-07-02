@@ -42,7 +42,7 @@ Bu proje, swerve mekanizmasına sahip bir mobil robotun CAD tasarımı, ROS1 üz
 
 ### 🔹 Manuel Kontrol Test Videosu
 
-[![Manual Kontrol Videosu](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID1/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID1)
+[![Manuel Kontrol Videosu](https://img.youtube.com/vi/HE8lBWTFYlc/0.jpg)](https://www.youtube.com/watch?v=HE8lBWTFYlc)
 
 > PyQt5 arayüzü ile yapılan ilk sürüş denemesi.
 
@@ -50,10 +50,11 @@ Bu proje, swerve mekanizmasına sahip bir mobil robotun CAD tasarımı, ROS1 üz
 
 ### 🔹 Çizgi Takip Test Videosu
 
-[![Çizgi Takip Videosu](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID2/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID2)
+[![Çizgi Takip Videosu](https://img.youtube.com/vi/NHxrpj31deg/0.jpg)](https://www.youtube.com/watch?v=NHxrpj31deg)
 
 > Çizgi takip algoritmasının simülasyon üzerindeki ilk denemesi.
 
+---
 ---
 
 ## 🚀 Gelecek Planlar
