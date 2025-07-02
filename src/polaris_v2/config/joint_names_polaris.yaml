@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'Left_Wheel_Joint', 'Right_Wheel_Joint', 'Lifting_Joint', 'CS1J', 'CW1J', 'CS2J', 'CW2J', 'CS3J', 'CW3J', 'CS4J', 'CW4J', ]

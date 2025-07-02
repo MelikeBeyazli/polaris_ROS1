@@ -1,0 +1,10 @@
+# Publish all joint states -----------------------------------
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 100
+    
+Lifting_Joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: Lifting_Joint
+  pid: {p: 100.0, i: 1.0, d: 10.0}
+  
